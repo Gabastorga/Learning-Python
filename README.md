@@ -1,2 +1,2 @@
 # Learning-Python
-A place to learn basic python
+This is a place where I can store small projects while I learn Python.
