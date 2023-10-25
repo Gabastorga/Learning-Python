@@ -1,0 +1,49 @@
+#I want to create a function where I can input a DNA sequence and reverses the characters and then compliments it with RNA bases, also add in flags to see if code is working
+
+#First find a way to do this in separate steps
+#Let's get a string and turn it into an array
+
+DNA = "AATGCGAGATTATATACGATTAGCAG"
+
+#reverse the string
+def reverse(x):
+    return x[::-1] #this slices the string and moves it backwards
+
+print(DNA)
+print(reverse(DNA))
+
+#Split reverse DNA into array
+DNA_array = list(reverse(DNA))
+print(DNA_array)
+
+#create a dictionary where each letter corresponds to the associated DNA base pair
+DNA_to_RNA = {"A":"U",
+              "T":"A",
+              "C":"G",
+              "G":"C"}
+
+#solution 1)
+RNA = [DNA_to_RNA[letter] for letter in DNA_array] #create an empty list called RNA to store the transformed letters.
+#We created a new list by iterating through each letter in DNA_array, look at the corresponding letter in the dictionary, and is then added to the empty RNA list
+print(RNA)
+
+
+#####################################
+#####################################
+#Turn this into a function
+DNA = "AATGCGAGATTATATACGATTAGCAG"
+DNA_to_RNA = {"A":"U",
+              "T":"A",
+              "C":"G",
+              "G":"C"}
+
+#reverse the string
+def convert_DNA_to_RNA(x):
+    reverse_DNA = DNA[::-1] #reverse the DNA
+    DNA_array = list(reverse_DNA) #Convert the reversed DNA into an array
+    RNA = [DNA_to_RNA[letter] for letter in DNA_array] #map the DNA to RNA using a dictionary
+    #return RNA #return the output as a list
+    RNA_string = "".join(RNA) #Return output as a string
+    return print(RNA_string)
+
+convert_DNA_to_RNA(DNA)
